@@ -1,0 +1,95 @@
+/* Content */
+#content {
+    padding: 0
+}
+
+#main-content {
+    margin: 25px;
+}
+
+#content h2 {
+    margin-left: 15px;
+    margin-top: 30px;
+}
+
+/* Sidebar */
+#sidebar {
+    background-color: #343946;
+    color: white;
+    min-height: 100vh;
+    cursor: default;
+    user-select: none;
+    padding-top: 10px;
+}
+
+#sidebar h4 {
+    background-color: #20252F;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+#sidebar .progress {
+    height: 10px;
+    background-color: #20252F;
+}
+
+#sidebar .progress-bar {
+    background-color: white;
+}
+
+#sidebar .list-group-item i {
+    margin-right: 3px;
+}
+
+#sidebar .list-group-item-hoverable {
+    transition: all 0.5s ease;
+}
+
+#sidebar .list-group-item-hoverable:hover {
+    background-color: #43454b;
+}
+
+.list-group-item {
+    background-color: inherit;
+    color: inherit;
+}
+
+.list-group {
+    padding-right: 0;
+}
+
+/* Certs */
+#certs li {
+    transition: all 0.5s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+#certs li:hover {
+    background-color: #cad0e0;
+}
+
+/* Experience */
+#experience .list-group-item {
+    transition: all 0.5s ease;
+}
+
+#experience .list-group-item:hover {
+    background-color: #cad0e0;
+}
+
+.list-group-item:hover {
+    color: inherit;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+

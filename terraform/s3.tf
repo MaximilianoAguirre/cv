@@ -26,11 +26,11 @@ POLICY
 }
 
 resource "aws_s3_bucket_object" "object" {
-  for_each = fileset("../frontend/build", "**")
+  for_each = fileset("../bash_cv/build", "**")
 
   bucket       = aws_s3_bucket.container.id
   key          = each.key
-  source       = "../frontend/build/${each.key}"
-  etag         = filemd5("../frontend/build/${each.key}")
+  source       = "../bash_cv/build/${each.key}"
+  etag         = filemd5("../bash_cv/build/${each.key}")
   content_type = lookup(local.mime_types, regex("\\.[^.]+$", each.value), null)
 }
