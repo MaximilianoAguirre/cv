@@ -17,8 +17,8 @@ resource "aws_route53_record" "webpage_cloudfront_www" {
   type    = "A"
 
   alias {
-      name                   = aws_cloudfront_distribution.frontend_cloudfront.domain_name
-      zone_id                = aws_cloudfront_distribution.frontend_cloudfront.hosted_zone_id
+      name                   = aws_cloudfront_distribution.frontend_cloudfront_static.domain_name
+      zone_id                = aws_cloudfront_distribution.frontend_cloudfront_static.hosted_zone_id
       evaluate_target_health = true
   }
 }
@@ -29,8 +29,20 @@ resource "aws_route53_record" "webpage_cloudfront" {
   type    = "A"
 
   alias {
-      name                   = aws_cloudfront_distribution.frontend_cloudfront.domain_name
-      zone_id                = aws_cloudfront_distribution.frontend_cloudfront.hosted_zone_id
+      name                   = aws_cloudfront_distribution.frontend_cloudfront_static.domain_name
+      zone_id                = aws_cloudfront_distribution.frontend_cloudfront_static.hosted_zone_id
+      evaluate_target_health = true
+  }
+}
+
+resource "aws_route53_record" "webpage_cloudfront_bash" {
+  zone_id = data.aws_route53_zone.main.zone_id
+  name    = "bash.maximilianoaguirre.com"
+  type    = "A"
+
+  alias {
+      name                   = aws_cloudfront_distribution.frontend_cloudfront_bash.domain_name
+      zone_id                = aws_cloudfront_distribution.frontend_cloudfront_bash.hosted_zone_id
       evaluate_target_health = true
   }
 }
